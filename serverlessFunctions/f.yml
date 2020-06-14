@@ -1,0 +1,19 @@
+service:
+  name: serverless-hello-world
+provider:
+  name: tencent
+functions:
+  wealth:
+    handler: wealth.handler
+    events:
+      - http:
+          path: /wealth
+          method: get
+  index:
+    handler: index.handler
+    events:
+      - http:
+          path: /*
+          method: get
+package:
+  artifact: code.zip
